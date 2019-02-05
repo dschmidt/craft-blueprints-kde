@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+
+# Fork to switch to https://github.com/ckamm/qtkeychain.git|0.9.1-plus137, delete this as soon as 0.9.2 is released with that
+
 import info
 from Package.CMakePackageBase import *
 
@@ -15,6 +18,11 @@ class subinfo(info.infoclass):
             self.targets[ver] = "https://github.com/frankosterfeld/qtkeychain/archive/v%s.tar.gz" % ver
             self.archiveNames[ver] = "qtkeychain-v%s.tar.gz" % ver
             self.targetInstSrc[ver] = 'qtkeychain-%s' % ver
+
+
+        # add our fork https://github.com/ckamm/qtkeychain/tree/v0.9.1-plus137
+        self.targets["0.9.1-plus137"] = "https://github.com/ckamm/qtkeychain.git|v0.9.1-plus137"
+
         self.targetDigests['0.4.0'] = '869ed20d15cc78ab3903701faf3100d639c3da57'
         self.targetDigests['0.5.0'] = (
             ['e62d7ae9c8ae04784d8a5d0f213aaa22f1c02427e800ce88739e997f499bb514'], CraftHash.HashAlgorithm.SHA256)
@@ -26,7 +34,7 @@ class subinfo(info.infoclass):
             ['0935e5eb67fbed0b2db5e74ea8cbd667c6be6eed3767f212eac6ac318ab8a6fc'], CraftHash.HashAlgorithm.SHA256)
         self.targetDigests['0.9.1'] = (
             ['9c2762d9d0759a65cdb80106d547db83c6e9fdea66f1973c6e9014f867c6f28e'], CraftHash.HashAlgorithm.SHA256)
-        self.defaultTarget = '0.9.1'
+        self.defaultTarget = '0.9.1-plus137'
 
 
 class Package(CMakePackageBase):

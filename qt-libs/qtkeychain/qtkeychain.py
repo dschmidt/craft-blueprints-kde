@@ -21,7 +21,7 @@ class subinfo(info.infoclass):
 
 
         # add our fork https://github.com/ckamm/qtkeychain/tree/v0.9.1-plus137
-        self.targets["0.9.1-plus137"] = "https://github.com/ckamm/qtkeychain.git|v0.9.1-plus137"
+        self.targets["0.9.1-plus137"] = "[git]https://github.com/ckamm/qtkeychain.git|v0.9.1-plus137"
 
         self.targetDigests['0.4.0'] = '869ed20d15cc78ab3903701faf3100d639c3da57'
         self.targetDigests['0.5.0'] = (
